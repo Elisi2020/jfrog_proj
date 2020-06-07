@@ -19,10 +19,10 @@ def read_artifactory_from_config(configfile):
     "--configfile",
     prompt=True,
     default="config.properties",
-    help=" Please insert configuration file location if other then default",
+    help="Prompt: Please insert configuration file location if other then default",
 )
-@click.option("--username", prompt=True, default="admin")
-@click.option("--password", prompt=True, default="9odPOM90quGZZjmdtKXC2w")
+@click.option("--username", prompt=True, default="admin", help='Prompt Value')
+@click.option("--password", prompt=True, default="9odPOM90quGZZjmdtKXC2w" ,help='Prompt Value')
 @click.pass_context
 def main(ctx, username, password, configfile):
     artifactory = read_artifactory_from_config(configfile)
@@ -85,20 +85,22 @@ def system_version(ctx):
 
 @main.command()
 @click.option("--new_user", prompt=True)
+@click.option("--email", prompt=True, default = 'sample@sample.com')
+@click.option("--password", prompt=True, default = 'password')
 @click.pass_context
-def create_user(ctx, new_user):
+def create_user(ctx, new_user,email,password):
     api = "/api/security/users/" + new_user
     url = ctx.obj["artifactory"] + api
     params = {}
     params["name"] = new_user
     params["admin"] = "false"
-    params["email"] = new_user + "@kuku.com"
-    params["password"] = "kukupassword"
+    params["email"] = email
+    params["password"] = password
     params["Content-Type"] = "application/json"
     headers = {"Authorization": "Bearer {}".format(ctx.obj["access_token"])}
     response = requests.put(url, headers=headers, json=params)
     if response.status_code == 201:
-        print("status code = {} text ={}".format(response.status_code, response.text))
+        print(" User {} was created successfully ".format(new_user))
     else:
         print(
             "Failed to Create User status code = {} text ={}".format(
