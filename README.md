@@ -1,10 +1,10 @@
 ## Jfrog
 
-####CLI for JFrog Artifactory 
+##### CLI for JFrog Artifactory 
 
 Created by Eli Siese
 
-####Overview
+#### Overview
 This page describes how to use JFrog CLI with JFrog Artifactory.
 Code is writen in python
 
@@ -32,13 +32,13 @@ Commands:
 ```
 ### sample
 TBD
-###Todos
+### Todos
 
  - Write MORE Tests
  
 ### Contact Information
  please fill free to send your comments to eli.siesel@gmail.com
  
- ######Thanks
+ ###### Thanks
  
- ######Eli
+ ###### Eli
