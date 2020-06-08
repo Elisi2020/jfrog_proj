@@ -34,6 +34,7 @@ Commands:
 TBD
 ### Todos
 
+ - Improve security
  - Write MORE Tests
  
 ### Contact Information

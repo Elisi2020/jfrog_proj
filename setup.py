@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="jfrog-cli-python-pkg-ELISI", # Replace with your own username
+    name="jfrog-cli-python-pkg-ELISI",
     version="1.0.0",
     author="Eli Siesel",
     author_email="eli.siesel@gmail.com",
