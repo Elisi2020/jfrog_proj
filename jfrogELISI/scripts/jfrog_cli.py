@@ -22,7 +22,7 @@ def read_artifactory_from_config(configfile):
     help="Prompt: Please insert configuration file location if other then default",
 )
 @click.option("--username", prompt=True, default="admin", help='Prompt Value')
-@click.option("--password", prompt=True, default="9odPOM90quGZZjmdtKXC2w" ,help='Prompt Value')
+@click.option("--password", prompt=True ,hide_input = True, help='Prompt Value')
 @click.pass_context
 def main(ctx, username, password, configfile):
     artifactory = read_artifactory_from_config(configfile)
