@@ -67,7 +67,7 @@ vagrant@master-2:~$ jfrog_cli get_storage_info
 Configfile [config.properties]:
 Username [admin]:
 Password:
-status code = 200 text ={"binariesSummary":{
+status code = 200 text ={"binariesSummary":{ // etc....
 ````
 
 ### Todos
