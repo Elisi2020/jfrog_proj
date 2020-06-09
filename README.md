@@ -9,8 +9,15 @@ This page describes how to use JFrog CLI with JFrog Artifactory.
 Code is writen in python
 
 #### Installation
-TBD
+```sh 
+sudo pip3 install jfrogELISI  --index https://bob:'Bob123456&'@esiesel.jfrog.io/artifactory/api/pypi/pypi-local/simple
+```
 
+Create config.properties (You will be prompt for the file path)
+```shell script
+[CONFIG]
+artifactory = <your-artifactory-path>
+```
 #### Usage
 ```sh
 Usage: jfrog_cli.py [OPTIONS] COMMAND [ARGS]...
@@ -31,9 +38,41 @@ Commands:
   system-version
 ```
 ### sample
-TBD
+
+##### Create User
+````buildoutcfg
+vagrant@master-2:~$ jfrog_cli create_user
+Configfile [config.properties]:
+Username [admin]:
+Password:
+New user: kuku
+Email [sample@sample.com]:
+Password [password]:
+ User kuku was created successfully
+````
+
+##### Delete User
+````buildoutcfg
+vagrant@master-2:~$ jfrog_cli delete_user
+Configfile [config.properties]:
+Username [admin]:
+Password:
+User to delete: kuku
+status code = 200 text =The user: 'kuku' has been removed successfully.
+
+````
+##### Get Storage Info
+````buildoutcfg
+vagrant@master-2:~$ jfrog_cli get_storage_info
+Configfile [config.properties]:
+Username [admin]:
+Password:
+status code = 200 text ={"binariesSummary":{
+````
+
 ### Todos
 
+ - Configuration validation
  - Improve security
  - Write MORE Tests
  
