@@ -13,12 +13,15 @@ Code is writen in python
 sudo pip3 install jfrogELISI  --index https://bob:'Bob123456&'@esiesel.jfrog.io/artifactory/api/pypi/pypi-local/simple
 ```
 
+
 Create config.properties (You will be prompt for the file path)
 ```shell script
 [CONFIG]
 artifactory = <your-artifactory-path>
 ```
 #### Usage
+After installation the script can run as a script(Please see the sample below), 
+on windows you will get  jfrog_cli.exe
 ```sh
 Usage: jfrog_cli.py [OPTIONS] COMMAND [ARGS]...
 
