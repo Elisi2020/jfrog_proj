@@ -13,6 +13,15 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Elisi2020/jfrog_proj",
     packages=setuptools.find_packages(),
+    include_package_data=True,
+    install_requires=[
+        'click', 'requests' ,'json'
+    ],
+    entry_points={
+    'console_scripts': [
+        'jfrogcli=jfrog:jfrogcli_pkg:main',
+    ],
+},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
